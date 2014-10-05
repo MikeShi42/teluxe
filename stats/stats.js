@@ -39,7 +39,7 @@ angular.module("teluxe")
             FB.ui(
                 {
                     method: 'share',
-                    href: 'teluxe.me',
+                    href: 'http://mikeshi42.github.io/teluxe',
                     caption:$scope.shareText
                 },
                 function(response) {
