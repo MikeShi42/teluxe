@@ -96,13 +96,15 @@ angular.module('teluxe')
         }
 
         function getSavings(curLightWattage,recommendedLightWatts,bulb_type){
-            var curEfficacy = getEfficacy(bulb_type)/100;
-            var idealEfficacy = getEfficacy('LED')/100;
+            //var curEfficacy = getEfficacy(bulb_type)/100;
+            //var idealEfficacy = getEfficacy('LED')/100;
+            //
+            //var curUsedWatt = curLightWattage/curEfficacy;
+            //var idealUsedWatt = recommendedLightWatts/idealEfficacy;
+            //
+            //return (curUsedWatt - idealUsedWatt) / curUsedWatt;
 
-            var curUsedWatt = curLightWattage/curEfficacy;
-            var idealUsedWatt = recommendedLightWatts/idealEfficacy;
-
-            return (curUsedWatt - idealUsedWatt) / curUsedWatt;
+            return (curLightWattage-recommendedLightWatts)/curLightWattage;
         }
 
         return{
@@ -118,6 +120,9 @@ angular.module('teluxe')
                 };
 
                 returnBody.savings = getSavings(returnBody.currentWattage,returnBody.recommendedWatts,bulb_type);
+
+                //console.log(returnBody.savings);
+
                 return returnBody;
             }
         }
