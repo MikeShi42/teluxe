@@ -39,7 +39,7 @@ angular.module("teluxe")
             FB.ui(
                 {
                     method: 'share',
-                    href: 'teluxe.ngrok.com',
+                    href: 'teluxe.me',
                     caption:$scope.shareText
                 },
                 function(response) {
@@ -113,6 +113,25 @@ angular.module("teluxe")
         });
 
         //eBay
+
+        function getRangedLumens(lumens){
+            if(lumens>=200 && lumens < 300)
+                return 250;
+            if(lumens>=300 && lumens < 625)
+                return 450;
+            if(lumens>=625 && lumens < 950)
+                return 800;
+            if(lumens>=950 && lumens < 1300)
+                return 1100;
+            if(lumens>=1300 && lumens < 1800)
+                return 1600;
+            if(lumens>=1800 && lumens < 2300)
+                return 2000;
+            if(lumens>=2300 && lumens < 2900)
+                return 2600;
+            return lumens;
+        }
+
         //TODO: Results not complete pertinent
         function Light(picture, title, url, currentPrice, saleTimeLeft){
             this.picture = picture;
@@ -121,6 +140,7 @@ angular.module("teluxe")
             this.currentPrice = currentPrice;
             this.saleTimeLeft = saleTimeLeft;
         }
+
         $scope.setLightsFromData = function(data){
 
             for(var i = 0; i<5; i++){
@@ -156,7 +176,7 @@ angular.module("teluxe")
             return $scope.lights;
         };
 
-        ebay_search_service.getLightBulbs($scope.results.recommendedWatts, $scope.results.recommendedLumens, "LED")
+        ebay_search_service.getLightBulbs($scope.results.recommendedWatts, getRangedLumens($scope.results.recommendedLumens), "LED")
             .success(function(data, status, headers, config){
                 console.log(data);
                 console.log($scope.setLightsFromData(data));
