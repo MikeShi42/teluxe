@@ -1,0 +1,78 @@
+html, body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 40px;
+    color: #fde0dc;
+    text-align: center;
+    margin: 0px;
+    height: 100%;
+    background: #ffffff;
+}
+/* Set the cursor to pointer */
+.cursor-pointer{
+    cursor: pointer;
+}
+/* Center the Text... */
+.centered-text{
+    text-align:center;
+}
+.arrow {
+    height: 10px;
+}
+
+.question{
+    font-size: 9vw;
+}
+.question-types{
+    font-size: 7vw;
+}
+.answer{
+    font-size: 0.7rem;
+}
+/* Activity Question Color */
+#activity .question {
+    background: #96281B;
+}
+/* Activity Answer Color */
+#activity .answer {
+    background: #d01716;
+}
+
+/* Distance Question Color */
+#distance .question {
+    background: #019875;
+}
+
+/* Distance Answer Color */
+#distance .answer {
+    background: #03a678;
+}
+
+/* Types Question Color */
+#types .question {
+    background: #420198;
+}
+
+/* Types Answer Color */
+#types .answer {
+    background: #4E08A8;
+}
+
+.answer1 {
+    opacity: 1;
+}
+
+.answer2 {
+    opacity:0.9;
+}
+
+.answer3 {
+    opacity:0.8;
+}
+
+.answer4 {
+    opacity:0.7;
+}
+
+.answer5 {
+    opacity:0.6;
+}
